@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/21_zwitscher_loesung_mariadb_TK.iml" filepath="$PROJECT_DIR$/.idea/21_zwitscher_loesung_mariadb_TK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ThailandReiseBlog.iml" filepath="$PROJECT_DIR$/.idea/ThailandReiseBlog.iml" />
       <module fileurl="file://$PROJECT_DIR$/21_zwitscher_loesung/zwitscher.iml" filepath="$PROJECT_DIR$/21_zwitscher_loesung/zwitscher.iml" />
     </modules>
   </component>
