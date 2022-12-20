@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>chat</title>
+    <style>
+html {
+  background-image: url('https://thumbs.dreamstime.com/b/be-our-guest-wording-board-hanging-rustic-wooden-background-welcome-concept-toned-image-92593044.jpg');
+    background-repeat: no-repeat;
+   background-attachment: fixed;
+  background-size: cover;
+}
+
+form {
+
+ text-align: center;
+
+}
+
+</style>
+</head>
+<body>
+<ul th:each="kommentar : ${KOMMENTARLISTE}">
+<li class="has-text-white">
+    <span th:text="${kommentar.timestampAsString}" />
+    <span th:text="${kommentar.name + ' : '}"  style="font-weight:bold" />
+    <span th:text="${kommentar.text}" />
+</li>
+</ul>
+<h3 class="title is-2 has-text-white" >Kommentiere deine letzte Reise: </h3>
+<form method="post">
+
+    <input class="has-text-black" type="text" name="name" value="Name" >
+    <input class="has-text-black" type="text" name="text" value="Kommentar" size="70" >
+    <input class="has-text-black" type="submit" name="kommentieren" value="Kommentieren">
+</form>
+<br>
+<a class="title is-2 has-text-white" th:href="@{/}" >Startseite</a>
+</body>
+</html>

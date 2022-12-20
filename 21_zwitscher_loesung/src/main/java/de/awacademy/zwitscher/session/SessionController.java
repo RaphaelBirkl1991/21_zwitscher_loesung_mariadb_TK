@@ -1,5 +1,6 @@
 package de.awacademy.zwitscher.session;
 
+import de.awacademy.zwitscher.kommentare.Kommentarfeld;
 import de.awacademy.zwitscher.user.User;
 import de.awacademy.zwitscher.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,12 +48,12 @@ public class SessionController {
             response.addCookie(cookie);
 
             // Login erfolgreich
-            return "redirect:/";
+            return "redirect:/kommentare";
         }
 
         bindingResult.addError(new FieldError("login", "password", "Login fehlgeschlagen."));
 
-        return "login";
+        return "redirect:/";
     }
 
     @PostMapping("/logout")
@@ -66,4 +67,6 @@ public class SessionController {
 
         return "redirect:/";
     }
+
+
 }
