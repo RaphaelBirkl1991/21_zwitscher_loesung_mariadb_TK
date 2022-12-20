@@ -27,10 +27,10 @@ section {
 
 </style>
 
-
     <title>Reise Nach Thailand </title></head>
 <body>
 
+<a th:href="@{/}" >Startseite</a>
 
 <ul th:if = "${kommentarfelder != null}" th:each="eintrag : ${kommentarfelder}">
     <li><p><span th:text="${eintrag.name}"/>: <span th:text="${eintrag.text}"/></p>
@@ -44,7 +44,7 @@ section {
 
     <h1 class="title has-text-black">Thailand Reiseblog</h1>
     <h2 class="subtitle has-text-black">
-        Lasse hier ein kurzen Kommentar zu deiner letzten Thailandreise <strong>sections</strong> und teile so deine Eindrücke mit anderen Reisenden!
+        Lasse hier ein kurzen Kommentar zu deiner letzten Thailandreise und teile so deine Eindrücke mit anderen Reisenden!
     </h2>
 
 <form  th:action="@{/neuerEintrag}" th:object="${kommentarfeld}"  method="post">
@@ -57,9 +57,7 @@ section {
 
 </section>
 
-    <p><input type="submit" value="Eintrag speichern"></p></form>
-<br>
-<a th:href="@{/}" >Startseite</a>
+
 </body>
 </html>
 

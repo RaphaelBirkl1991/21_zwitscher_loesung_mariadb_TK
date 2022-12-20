@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrieren</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+            html {
+    background-image: url('http://cdn2.hubspot.net/hub/146434/file-2579021268-jpg/check_in.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
+    body {
+
+    text-align: center;
+
+    }
+
+
+
+    </style>
+
 </head>
 <body>
-<h1>Registrieren</h1>
-<form th:action="@{/register}" th:object="${registration}" method="post">
+<h1 class="has-text-white">Registrieren</h1>
+<form class="has-text-danger" th:action="@{/register}" th:object="${registration}" method="post">
     Username: <input type="text" th:field="*{username}"><br/>
     <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
     Passwort: <input type="password" th:field="*{password1}"><br/>
@@ -16,6 +39,6 @@
     <button type="submit">Registrieren</button>
 </form>
 <br>
-<a th:href="@{/}" >Startseite</a>
+<a class="has-text-white" th:href="@{/}" >Startseite</a>
 </body>
 </html>
