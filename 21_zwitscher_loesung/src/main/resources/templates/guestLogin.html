@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+</head>
+<body>
+<ul th:each="kommentar : ${KOMMENTARLISTE}">
+<li>
+    <span th:text="${kommentar.timestampAsString}" />
+    <span th:text="${kommentar.name + ' : '}"  style="font-weight:bold" />
+    <span th:text="${kommentar.text}" />
+</li>
+</ul>
+<h3>Kommentiere deine letzte Reise: </h3>
+<form method="post">
+
+    <input type="text" name="name" value="Name" >
+    <input type="text" name="text" value="Kommentar" size="70" >
+    <input type="submit" name="kommentieren" value="kommentieren">
+</form>
+<br>
+<a th:href="@{/}" >Startseite</a>
+</body>
+</html>
