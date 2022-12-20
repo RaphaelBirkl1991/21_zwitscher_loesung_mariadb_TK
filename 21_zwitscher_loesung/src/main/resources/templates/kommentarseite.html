@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Reise Nach Thailand </title></head>
+    <title>Reise nach Thailand </title></head>
 <body>
 <ul th:if = "${kommentarfelder != null}" th:each="eintrag : ${kommentarfelder}">
     <li><p><span th:text="${eintrag.name}"/>: <span th:text="${eintrag.text}"/></p>

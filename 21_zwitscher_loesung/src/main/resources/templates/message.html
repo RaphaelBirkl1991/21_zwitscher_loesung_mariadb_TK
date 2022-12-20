@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Nachricht schreiben</title>
+    <title>Bewerte deine Reise</title>
 </head>
 <body>
-<h1>Nachricht schreiben</h1>
+<h1>Bewerte deine Reise</h1>
 <form th:action="@{/message}" th:object="${message}" method="post">
     <textarea th:field="*{text}"></textarea>
     <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p>
