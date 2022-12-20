@@ -18,5 +18,7 @@
     <p>Kommentarfeld: <input type="text" th:field="*{text}"></p>
     <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p>
     <p><input type="submit" value="Eintrag speichern"></p></form>
+<br>
+<a th:href="@{/}" >Startseite</a>
 </body>
 </html>

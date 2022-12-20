@@ -25,6 +25,11 @@ public class HomeController {
         return "home";
     }
 
+//    @GetMapping("/")
+//    public String home() {
+//        return "home";
+//    }
+
 //    @PostMapping("/guestLogin")
 //        public String postGuestLogin(){
 //        return "guestLogin";

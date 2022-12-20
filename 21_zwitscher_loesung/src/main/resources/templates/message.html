@@ -9,8 +9,10 @@
 <form th:action="@{/message}" th:object="${message}" method="post">
     <textarea th:field="*{text}"></textarea>
     <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p>
-    <br>
+    <br>![](../../../../../../../../RAPHAE~1/AppData/Local/Temp/download.jpg)
     <button type="submit">Abschicken</button>
 </form>
+<br>
+<a th:href="@{/}" >Startseite</a>
 </body>
 </html>

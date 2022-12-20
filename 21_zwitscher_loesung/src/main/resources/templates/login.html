@@ -13,5 +13,7 @@
     <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
     <button type="submit">Login</button>
 </form>
+<br>
+<a th:href="@{/}" >Startseite</a>
 </body>
 </html>
