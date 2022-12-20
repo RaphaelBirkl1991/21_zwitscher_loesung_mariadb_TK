@@ -2,8 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+html {
+  background-image: url('https://previews.123rf.com/images/potowizard/potowizard1509/potowizard150900071/45491255-thailand-travel-background-concept.jpg');
+  background-repeat: no-repeat;
+   background-attachment: fixed;
+  background-size: cover;
+}
+form {
+
+ text-align: center;
+
+}
+section {
+
+ text-align: center;
+
+}
+
+
+</style>
+
+
     <title>Reise Nach Thailand </title></head>
 <body>
+
+
 <ul th:if = "${kommentarfelder != null}" th:each="eintrag : ${kommentarfelder}">
     <li><p><span th:text="${eintrag.name}"/>: <span th:text="${eintrag.text}"/></p>
         <ul>
@@ -11,12 +39,24 @@
         </ul>
     </li>
 </ul>
-<form th:action="@{/neuerEintrag}" th:object="${kommentarfeld}"  method="post">
-    <p>Name: <input type="text" th:field="*{name}"></p>
+
+<section class="section">
+
+    <h1 class="title has-text-black">Thailand Reiseblog</h1>
+    <h2 class="subtitle has-text-black">
+        Lasse hier ein kurzen Kommentar zu deiner letzten Thailandreise <strong>sections</strong> und teile so deine Eindrücke mit anderen Reisenden!
+    </h2>
+
+<form  th:action="@{/neuerEintrag}" th:object="${kommentarfeld}"  method="post">
+    <p  class="title is-2 has-text-black" >Name: <input type="text" th:field="*{name}"></p>
 <!--    form th:action="@{/login}" th:object="${login}" method="post">-->
     <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
-    <p>Kommentarfeld: <input type="text" th:field="*{text}"></p>
+    <p class="title is-2 has-text-black">Kommentarfeld: <input type="text" th:field="*{text}"></p>
     <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p>
-    <p><input type="submit" value="Eintrag speichern"></p></form>
+    <p ><input class="button is-primary" type="submit" value="Eintrag speichern"></p></form>
+
+</section>
+
 </body>
 </html>
+

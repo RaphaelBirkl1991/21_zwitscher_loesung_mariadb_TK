@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+html {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/007/164/537/original/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg');
+}
+
+
+</style>
+
 </head>
 <body>
-<h1>Login</h1>
+<section class="section">
+    <h1 class="title">Login Reiseblog Thailand</h1>
+    <h2 class="subtitle">
+        Einfach einloggen und andere an deiner Thailandreise teilhaben lassen <strong></strong>, so einfach ist es!
+    </h2>
+</section>
 <form th:action="@{/login}" th:object="${login}" method="post">
     Username: <input type="text" th:field="*{username}"><br/>
     <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
     Passwort: <input type="password" th:field="*{password}"><br/>
     <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-    <button type="submit">Login</button>
+    <button class="button is-success">Login</button>
 </form>
 </body>
 </html>
