@@ -7,8 +7,9 @@
 <body>
     <h1 th:text="${'Willkommen, Unbekannter'}" th:if="${sessionUser == null}"></h1>
     <h1 th:text="${'Willkommen, ' + sessionUser.username}" th:if="${sessionUser != null}"></h1>
-    <a th:href="@{/login}" th:if="${sessionUser == null}">Login</a>
-    <a th:href="@{/register}">Registrieren</a>
+    <a th:href="@{/login}" th:if="${sessionUser == null}">Login</a><br>
+    <a th:href="@{/register}">Registrieren</a><br>
+    <a th:href="@{/guestLogin}">Fortfahren ohne Login</a><br>
 
 
     <form th:if="${sessionUser != null}" method="post" th:action="@{/logout}">
