@@ -29,13 +29,17 @@
 </head>
 <body>
 <h1 class="has-text-white">Registrieren</h1>
-<form class="has-text-danger" th:action="@{/register}" th:object="${registration}" method="post">
+<form class="has-text-white" th:action="@{/register}" th:object="${registration}" method="post">
+    <br>
     Username: <input type="text" th:field="*{username}"><br/>
     <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+    <br>
     Passwort: <input type="password" th:field="*{password1}"><br/>
     <p th:if="${#fields.hasErrors('password1')}" th:errors="*{password1}"></p>
-    Passwort nochmal: <input type="password" th:field="*{password2}"><br/>
+    <br>
+    Passwort wiederholen: <input type="password" th:field="*{password2}"><br/>
     <p th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}"></p>
+    <br>
     <button type="submit">Registrieren</button>
 </form>
 <br>

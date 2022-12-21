@@ -13,23 +13,28 @@ html {
    background-attachment: fixed;
   background-size: cover;
 }
+.start{
+    text-align: initial;
+}
 
 form {
-
- text-align: center;
-
+    text-align: center;
+}
+body{
+    text-align: center;
 }
 
 </style>
 </head>
 <body>
-<ul th:each="kommentar : ${KOMMENTARLISTE}">
-<li class="has-text-white">
-    <span th:text="${kommentar.timestampAsString}" />
-    <span th:text="${kommentar.name + ' : '}"  style="font-weight:bold" />
-    <span th:text="${kommentar.text}" />
-</li>
-</ul>
+<!--<ul th:each="kommentar : ${KOMMENTARLISTE}">-->
+<!--<li class="has-text-white">-->
+<!--    <span th:text="${kommentar.timestampAsString}" />-->
+<!--    <span th:text="${kommentar.name + ' : '}"  style="font-weight:bold" />-->
+<!--    <span th:text="${kommentar.text}" />-->
+<!--</li>-->
+<!--</ul>-->
+<a class="start" "title is-2 has-text-white" th:href="@{/}" >Startseite</a>
 <h3 class="title is-2 has-text-white" >Kommentiere deine letzte Reise: </h3>
 <form method="post">
 
@@ -37,7 +42,16 @@ form {
     <input class="has-text-black" type="text" name="text" value="Kommentar" size="70" >
     <input class="has-text-black" type="submit" name="kommentieren" value="Kommentieren">
 </form>
+
 <br>
-<a class="title is-2 has-text-white" th:href="@{/}" >Startseite</a>
+<ul th:each="kommentar : ${KOMMENTARLISTE}">
+    <li class="has-text-white">
+        <span th:text="${kommentar.timestampAsString}" />
+        <span th:text="${kommentar.name + ' : '}"  style="font-weight:bold" />
+        <span th:text="${kommentar.text}" />
+    </li>
+</ul>
+<br>
+<!--<a class="title is-2 has-text-white" th:href="@{/}" >Startseite</a>-->
 </body>
 </html>

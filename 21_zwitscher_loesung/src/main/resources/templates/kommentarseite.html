@@ -23,6 +23,12 @@ section {
  text-align: center;
 
 }
+/*.textarea{*/
+/*    width: 1%;*/
+/*    height: 200px;*/
+/*    padding: 100px;*/
+/*    background-color: white;*/
+/*}*/
 
 
 </style>
@@ -30,7 +36,7 @@ section {
     <title>Reise Nach Thailand </title></head>
 <body>
 
-<a th:href="@{/}" >Startseite</a>
+<!--<a th:href="@{/}" >Startseite</a>-->
 
 <ul th:if = "${kommentarfelder != null}" th:each="eintrag : ${kommentarfelder}">
     <li><p><span th:text="${eintrag.name}"/>: <span th:text="${eintrag.text}"/></p>
@@ -51,9 +57,13 @@ section {
     <p  class="title is-2 has-text-black" >Name: <input type="text" th:field="*{name}"></p>
 <!--    form th:action="@{/login}" th:object="${login}" method="post">-->
     <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
-    <p class="title is-2 has-text-black">Kommentarfeld: <input type="text" th:field="*{text}"></p>
+    <p class= "title is-2 has-text-black">Kommentarfeld:<input type="text" size="70*70" th:field="*{text}" ></p>
     <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p>
+    <br>
     <p ><input class="button is-primary" type="submit" value="Eintrag speichern"></p></form>
+    <br>
+    <br>
+    <a th:href="@{/}" >Startseite</a>
 
 </section>
 
